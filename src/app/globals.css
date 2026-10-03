@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Tajawal", "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-royal-50: #f7f4fc;
+  --color-royal-100: #ece5f7;
+  --color-royal-200: #d5c5ec;
+  --color-royal-300: #b195d9;
+  --color-royal-400: #8a64bd;
+  --color-royal-500: #6d3fa0;
+  --color-royal-600: #582e85;
+  --color-royal-700: #46226a;
+  --color-royal-800: #371854;
+  --color-royal-900: #2a1042;
+  --color-royal-950: #1c0930;
+
+  --color-gold-100: #fff3d1;
+  --color-gold-200: #ffe49a;
+  --color-gold-300: #ffd666;
+  --color-gold-400: #ffc93c;
+  --color-gold-500: #f7b500;
+  --color-gold-600: #d99e00;
+  --color-gold-700: #b3810a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f5fb;
+  color: #241436;
+  font-family: var(--font-sans);
+}
+
+@keyframes pulseRing {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55); }
+  70% { box-shadow: 0 0 0 14px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+.alert-ring {
+  animation: pulseRing 1.4s infinite;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+.spin-slow {
+  animation: spinSlow 1s linear infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9b8e4;
+  border-radius: 8px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .print-block {
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
